@@ -1,69 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greyline Cyprus – Private Security & Escort</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greyline Cyprus – Coming Soon</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: #ffffff;
-      color: #1a1a1a;
-    }
-    header {
-      background: #1a1a1a;
-      color: #d4af37;
-      padding: 60px 20px;
+      color: #9c6b1c;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
       text-align: center;
+      padding: 40px 20px 60px 20px;
+      box-sizing: border-box;
     }
-    header h1 {
-      font-size: 42px;
-      margin: 0 0 10px;
+    img {
+      max-width: 300px;
+      margin-bottom: 30px;
     }
-    header p {
-      font-size: 20px;
-      margin: 0 0 20px;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
     }
-    .button {
-      display: inline-block;
-      background: #d4af37;
-      color: #1a1a1a;
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 16px;
+    p {
+      font-size: 18px;
+      margin-bottom: 0;
     }
-    .lang-bar {
-      text-align: right;
-      padding: 10px 20px;
+    footer {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      margin-top: auto;
+      padding-top: 40px;
+    }
+    .lang-selector {
+      position: absolute;
+      top: 10px;
+      right: 20px;
     }
     .flag {
-      width: 24px;
-      height: auto;
-      margin-left: 10px;
       cursor: pointer;
-    }
-    @media screen and (max-width: 480px) {
-      .flag {
-        width: 20px;
-      }
+      font-size: 20px;
+      margin: 0 5px;
     }
   </style>
 </head>
 <body>
-  <div class="lang-bar">
-    <img src="https://flagcdn.com/gb.svg" alt="English" class="flag" onclick="setLanguage('en')">
-    <img src="https://flagcdn.com/gr.svg" alt="Greek" class="flag" onclick="setLanguage('gr')">
-    <img src="https://flagcdn.com/ru.svg" alt="Russian" class="flag" onclick="setLanguage('ru')">
-    <img src="https://flagcdn.com/il.svg" alt="Hebrew" class="flag" onclick="setLanguage('he')">
+  <div class="lang-selector">
+    <span class="flag" onclick="setLanguage('en')">🇬🇧</span>
+    <span class="flag" onclick="setLanguage('gr')">🇬🇷</span>
+    <span class="flag" onclick="setLanguage('ru')">🇷🇺</span>
+    <span class="flag" onclick="setLanguage('he')">🇮🇱</span>
   </div>
 
-  <header>
-    <h1>Discreet Private Security in Cyprus</h1>
-    <p>Executive Protection, Property Patrols & Personal Escorting — Trusted, Quiet, Elite.</p>
-    <a class="button" href="#booking">Request Booking</a>
-  </header>
+  <img src="logo.jpg" alt="Greyline Cyprus Logo" />
+  <h1 id="title">Site Coming Soon</h1>
+  <p id="message">Thank you for visiting. Our full site will launch shortly.</p>
+
+  <footer id="footer">
+    Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.
+  </footer>
+
+  <script>
+    const translations = {
+      gr: {
+        title: "Ο Ιστότοπος Έρχεται Σύντομα",
+        message: "Σας ευχαριστούμε για την επίσκεψη. Ο πλήρης ιστότοπος θα είναι σύντομα διαθέσιμος.",
+        footer: "Η Greyline Cyprus παρέχει άοπλες, ιδιωτικές υπηρεσίες συνοδείας και περιπολίας σύμφωνα με την τοπική νομοθεσία. Δεν συλλέγονται προσωπικά δεδομένα μέσω αυτού του ιστότοπου."
+      },
+      ru: {
+        title: "Сайт скоро появится",
+        message: "Спасибо за посещение. Полная версия сайта скоро будет доступна.",
+        footer: "Greyline Cyprus предоставляет невооружённые частные услуги сопровождения и патрулирования в соответствии с местным законодательством. Этот сайт не собирает персональные данные."
+      },
+      he: {
+        title: "האתר יעלה בקרוב",
+        message: "תודה שביקרתם. האתר המלא יעלה בקרוב.",
+        footer: "Greyline Cyprus מספקת שירותי ליווי וסיור פרטיים ללא נשק, בהתאם לחוק המקומי. אתר זה אינו אוסף נתונים אישיים."
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      if (t) {
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("message").textContent = t.message;
+        document.getElementById("footer").textContent = t.footer;
+      } else {
+        document.getElementById("title").textContent = "Site Coming Soon";
+        document.getElementById("message").textContent = "Thank you for visiting. Our full site will launch shortly.";
+        document.getElementById("footer").textContent = "Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.";
+      }
+    }
+  </script>
 </body>
 </html>
