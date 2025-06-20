@@ -42,21 +42,19 @@
       top: 10px;
       right: 20px;
     }
-    select {
-      padding: 5px 10px;
-      font-size: 14px;
+    .flag {
+      cursor: pointer;
+      font-size: 20px;
+      margin: 0 5px;
     }
   </style>
 </head>
 <body>
   <div class="lang-selector">
-    <label for="lang">🌍 Language:</label>
-    <select id="lang" onchange="translate()">
-      <option value="en">English</option>
-      <option value="gr">Ελληνικά</option>
-      <option value="ru">Русский</option>
-      <option value="he">עברית</option>
-    </select>
+    <span class="flag" onclick="translate('en')">🇬🇧</span>
+    <span class="flag" onclick="translate('gr')">🇬🇷</span>
+    <span class="flag" onclick="translate('ru')">🇷🇺</span>
+    <span class="flag" onclick="translate('he')">🇮🇱</span>
   </div>  <img src="logo.jpg" alt="Greyline Cyprus Logo" />
   <h1 id="title">Site Coming Soon</h1>
   <p id="message">Thank you for visiting. Our full site will launch shortly.</p>  <footer id="footer">
@@ -80,16 +78,15 @@
       }
     };
 
-    function translate() {
-      const lang = document.getElementById("lang").value;
-      if (translations[lang]) {
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("message").innerText = translations[lang].message;
-        document.getElementById("footer").innerText = translations[lang].footer;
-      } else {
+    function translate(lang) {
+      if (lang === 'en') {
         document.getElementById("title").innerText = "Site Coming Soon";
         document.getElementById("message").innerText = "Thank you for visiting. Our full site will launch shortly.";
         document.getElementById("footer").innerText = "Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.";
+      } else if (translations[lang]) {
+        document.getElementById("title").innerText = translations[lang].title;
+        document.getElementById("message").innerText = translations[lang].message;
+        document.getElementById("footer").innerText = translations[lang].footer;
       }
     }
   </script></body>
