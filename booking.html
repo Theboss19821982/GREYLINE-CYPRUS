@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking – Greyline Cyprus</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body {
+      background: #fdfaf5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+      padding: 0 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #9c6b1c;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p.intro {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      background: #9c6b1c;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      margin-top: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #7d5215;
+    }
+    footer {
+      font-size: 12px;
+      color: #888;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-crest-matched-bg.png" alt="Greyline Crest" class="logo">
+    <h1>Book a Discreet Security Service</h1>
+    <p class="intro">Complete the form below for a private consultation or booking. All information is handled confidentially.</p>
+  </header>
+
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="contact">Contact Info (Phone or WhatsApp)</label>
+    <input type="text" id="contact" name="contact" required>
+
+    <label for="nationality">Nationality</label>
+    <input type="text" id="nationality" name="nationality" required>
+
+    <label for="datetime">Date & Time of Service</label>
+    <input type="datetime-local" id="datetime" name="datetime" required>
+
+    <label for="location">Service Location or Area</label>
+    <input type="text" id="location" name="location" required>
+
+    <label for="service">Service Type</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service</option>
+      <option value="escort">Personal Escort</option>
+      <option value="vip">VIP Escort</option>
+      <option value="property">Property Patrol</option>
+      <option value="emergency">Emergency Call-Out</option>
+      <option value="retainer">Monthly Retainer</option>
+    </select>
+
+    <label for="vehicle">Do you require executive car transport?</label>
+    <select id="vehicle" name="vehicle" required>
+      <option value="">Please select</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="groupSize">Number of Individuals Involved</label>
+    <input type="number" id="groupSize" name="groupSize" min="1" required>
+
+    <label for="primaryClient">Primary Client (if different from contact)</label>
+    <input type="text" id="primaryClient" name="primaryClient" placeholder="Optional">
+
+    <label for="risk">Disclose Any Known Risks or Threats</label>
+    <textarea id="risk" name="risk" rows="4" placeholder="Required – threats, ex-partner issues, stalking, etc." required></textarea>
+
+    <button type="submit">Submit Booking Request</button>
+  </form>
+
+  <footer>
+    All bookings are subject to availability and internal security review.
+  </footer>
+</body>
+</html>
