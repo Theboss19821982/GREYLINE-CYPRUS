@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,15 +52,21 @@
 </head>
 <body>
   <div class="lang-selector">
-    <span class="flag" onclick="translate('en')">🇬🇧</span>
-    <span class="flag" onclick="translate('gr')">🇬🇷</span>
-    <span class="flag" onclick="translate('ru')">🇷🇺</span>
-    <span class="flag" onclick="translate('he')">🇮🇱</span>
-  </div>  <img src="logo.jpg" alt="Greyline Cyprus Logo" />
+    <span class="flag" onclick="setLanguage('en')">🇬🇧</span>
+    <span class="flag" onclick="setLanguage('gr')">🇬🇷</span>
+    <span class="flag" onclick="setLanguage('ru')">🇷🇺</span>
+    <span class="flag" onclick="setLanguage('he')">🇮🇱</span>
+  </div>
+
+  <img src="logo.jpg" alt="Greyline Cyprus Logo" />
   <h1 id="title">Site Coming Soon</h1>
-  <p id="message">Thank you for visiting. Our full site will launch shortly.</p>  <footer id="footer">
+  <p id="message">Thank you for visiting. Our full site will launch shortly.</p>
+
+  <footer id="footer">
     Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.
-  </footer>  <script>
+  </footer>
+
+  <script>
     const translations = {
       gr: {
         title: "Ο Ιστότοπος Έρχεται Σύντομα",
@@ -78,16 +85,18 @@
       }
     };
 
-    function translate(lang) {
-      if (lang === 'en') {
-        document.getElementById("title").innerText = "Site Coming Soon";
-        document.getElementById("message").innerText = "Thank you for visiting. Our full site will launch shortly.";
-        document.getElementById("footer").innerText = "Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.";
-      } else if (translations[lang]) {
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("message").innerText = translations[lang].message;
-        document.getElementById("footer").innerText = translations[lang].footer;
+    function setLanguage(lang) {
+      const t = translations[lang];
+      if (t) {
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("message").textContent = t.message;
+        document.getElementById("footer").textContent = t.footer;
+      } else {
+        document.getElementById("title").textContent = "Site Coming Soon";
+        document.getElementById("message").textContent = "Thank you for visiting. Our full site will launch shortly.";
+        document.getElementById("footer").textContent = "Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally in compliance with local laws. No personal data is collected via this website.";
       }
     }
-  </script></body>
+  </script>
+</body>
 </html>
