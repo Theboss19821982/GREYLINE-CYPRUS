@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Greyline Cyprus – Coming Soon</title>
   <style>
     body {
@@ -63,7 +63,7 @@
   <p id="message">Thank you for visiting. Our full site will launch shortly.</p>
 
   <footer id="footer">
-   © 2025 Greyline Cyprus. All rights reserved. Services subject to availability and legal compliance. Greyline Cyprus operates within all applicable local and international laws.
+    © 2025 Greyline Cyprus. All rights reserved. Services subject to availability and legal compliance. Greyline Cyprus operates within all applicable local and international laws.<br><br>
     Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally. No personal data is collected via this website.
   </footer>
 
@@ -83,21 +83,19 @@
         title: "האתר יעלה בקרוב",
         message: "תודה שביקרתם. האתר המלא יעלה בקרוב.",
         footer: "Greyline Cyprus מספקת שירותי ליווי וסיור פרטיים ללא נשק, בהתאם לחוק המקומי. אתר זה אינו אוסף נתונים אישיים."
+      },
+      en: {
+        title: "Site Coming Soon",
+        message: "Thank you for visiting. Our full site will launch shortly.",
+        footer: "© 2025 Greyline Cyprus. All rights reserved. Services subject to availability and legal compliance. Greyline Cyprus operates within all applicable local and international laws.<br><br>Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally. No personal data is collected via this website."
       }
     };
 
     function setLanguage(lang) {
-      const t = translations[lang];
-      if (t) {
-        document.getElementById("title").textContent = t.title;
-        document.getElementById("message").textContent = t.message;
-        document.getElementById("footer").textContent = t.footer;
-      } else {
-        document.getElementById("title").textContent = "Site Coming Soon";
-        document.getElementById("message").textContent = "Thank you for visiting. Our full site will launch shortly.";
-        document.getElementById("footer").textContent = "© 2025 Greyline Cyprus. All rights reserved. Services subject to availability and legal compliance. Greyline Cyprus operates within all applicable local and international laws.
-    Greyline Cyprus provides unarmed, private security escort and patrol services. Services are offered discreetly and professionally. No personal data is collected via this website.";
-      }
+      const t = translations[lang] || translations.en;
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("message").textContent = t.message;
+      document.getElementById("footer").innerHTML = t.footer;
     }
   </script>
 </body>
